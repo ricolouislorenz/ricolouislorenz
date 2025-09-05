@@ -1,2 +1,7 @@
 # -ricolouislorenz
-Track of my daily programming exercises
+Record of my daily programming exercises
+
+## Last Finished Katas
+<!-- KATAS:START -->
+<!-- KATAS:END -->
+
