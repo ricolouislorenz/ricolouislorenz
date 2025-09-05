@@ -41,7 +41,7 @@ jobs:
 
           (async () => {
             const data = await getJSON(url);
-            const items = (data.data || []).slice(0,5).map(c => {
+            const items = (data.data || []).slice(0,100).map(c => {
               const when = new Date(c.completedAt).toISOString().split('T')[0];
               const kataUrl = `https://www.codewars.com/kata/${c.slug}`;
               const langs = (c.completedLanguages || []).join(', ');
