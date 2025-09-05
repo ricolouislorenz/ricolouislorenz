@@ -1,0 +1,75 @@
+name: Update Codewars section
+
+on:
+  schedule:
+    # daily update at 05:10am UTC 
+    - cron: "10 5 * * *"
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Node einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: check Codewars & update README
+        env:
+          CW_USER: ricolouislorenz
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const https = require('https');
+          const USER = process.env.CW_USER;
+          const url = `https://www.codewars.com/api/v1/users/${USER}/code-challenges/completed?page=0`;
+
+          function getJSON(u){
+            return new Promise((resolve, reject)=>{
+              https.get(u, (res)=>{
+                let data=''; res.on('data', d=>data+=d);
+                res.on('end', ()=>{ try{ resolve(JSON.parse(data)); } catch(e){ reject(e); }});
+              }).on('error', reject);
+            });
+          }
+
+          (async () => {
+            const data = await getJSON(url);
+            const items = (data.data || []).slice(0,5).map(c => {
+              const when = new Date(c.completedAt).toISOString().split('T')[0];
+              const kataUrl = `https://www.codewars.com/kata/${c.slug}`;
+              const langs = (c.completedLanguages || []).join(', ');
+              return `- ${when}: [${c.name}](${kataUrl}) — ${langs}`;
+            });
+
+            const md = fs.readFileSync('README.md','utf8');
+            const START='<!-- KATAS:START -->', END='<!-- KATAS:END -->';
+            const block = `${START}\n${items.join('\n') || '_Here we go..._'}\n${END}`;
+            const updated = md.replace(new RegExp(`${START}[\\s\\S]*?${END}`,'m'), block);
+            fs.writeFileSync('README.md', updated);
+          })().catch(e => { console.error(e); process.exit(1); });
+          NODE
+
+      - name: Detect changes
+        id: diff
+        run: |
+          if git diff --quiet README.md; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit & Push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "ricolouislorenz"
+          git config user.email "76227596+ricolouislorenz@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: update Codewars section"
+          git push
