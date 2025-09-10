@@ -6,6 +6,8 @@ Record of my daily programming exercises
 
 ## Last Finished Katas
 <!-- KATAS:START -->
+- 2025-09-09: [Even or Odd](https://www.codewars.com/kata/even-or-odd) — java
+- 2025-09-09: [Function 1 - hello world](https://www.codewars.com/kata/function-1-hello-world) — java
 - 2025-09-05: [Rock Paper Scissors!](https://www.codewars.com/kata/rock-paper-scissors) — python
 - 2025-09-05: [You Can't Code Under Pressure #1](https://www.codewars.com/kata/you-cant-code-under-pressure-number-1) — python
 - 2025-09-05: [Beginner Series #1 School Paperwork](https://www.codewars.com/kata/beginner-series-number-1-school-paperwork) — python
