@@ -6,6 +6,7 @@ Record of my daily programming exercises
 
 ## Last Finished Katas
 <!-- KATAS:START -->
+- 2025-09-10: [Beginner Series #2 Clock](https://www.codewars.com/kata/beginner-series-number-2-clock) — java
 - 2025-09-09: [Even or Odd](https://www.codewars.com/kata/even-or-odd) — java
 - 2025-09-09: [Function 1 - hello world](https://www.codewars.com/kata/function-1-hello-world) — java
 - 2025-09-05: [Rock Paper Scissors!](https://www.codewars.com/kata/rock-paper-scissors) — python
