@@ -6,6 +6,7 @@ Record of my daily programming exercises
 
 ## Last Finished Katas
 <!-- KATAS:START -->
+- 2025-09-17: [Abbreviate a Two Word Name](https://www.codewars.com/kata/abbreviate-a-two-word-name) — java
 - 2025-09-15: [You only need one - Beginner](https://www.codewars.com/kata/you-only-need-one-beginner) — java
 - 2025-09-11: [Convert a Number to a String!](https://www.codewars.com/kata/convert-a-number-to-a-string) — java
 - 2025-09-10: [Beginner Series #2 Clock](https://www.codewars.com/kata/beginner-series-number-2-clock) — java
