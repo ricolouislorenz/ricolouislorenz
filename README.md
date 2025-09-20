@@ -6,6 +6,7 @@ Record of my daily programming exercises
 
 ## Last Finished Katas
 <!-- KATAS:START -->
+- 2025-09-19: [Opposites Attract](https://www.codewars.com/kata/opposites-attract) — java
 - 2025-09-18: [Beginner - Reduce but Grow](https://www.codewars.com/kata/beginner-reduce-but-grow) — java
 - 2025-09-17: [Abbreviate a Two Word Name](https://www.codewars.com/kata/abbreviate-a-two-word-name) — java
 - 2025-09-15: [You only need one - Beginner](https://www.codewars.com/kata/you-only-need-one-beginner) — java
