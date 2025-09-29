@@ -6,6 +6,7 @@ Record of my daily programming exercises
 
 ## Last Finished Katas
 <!-- KATAS:START -->
+- 2025-09-28: [Reversed Strings](https://www.codewars.com/kata/reversed-strings) — java
 - 2025-09-23: [Square(n) Sum](https://www.codewars.com/kata/square-n-sum) — java
 - 2025-09-19: [Opposites Attract](https://www.codewars.com/kata/opposites-attract) — java
 - 2025-09-18: [Beginner - Reduce but Grow](https://www.codewars.com/kata/beginner-reduce-but-grow) — java
